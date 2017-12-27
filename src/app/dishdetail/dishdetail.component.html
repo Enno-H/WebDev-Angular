@@ -33,10 +33,11 @@
           <span> {{comment.rating}} Stars</span>
         </p>
         <p md-line>
-          <span>-- {{comment.author}} {{comment.date | date:'mediumDate'}} </span>
+          <span>-- {{comment.author}} , {{comment.date | date:'mediumDate'}} </span>
         </p>
       </md-list-item>
     </md-list>
+
     <form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
         <p>{{ commentForm.value | json }}</p>
         <p>

@@ -10,6 +10,7 @@ import 'rxjs/add/operator/switchMap';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Comment } from '../shared/comment'
+import { Data } from '@angular/router/src/config';
 
 @Component({
   selector: 'app-dishdetail',
@@ -97,6 +98,10 @@ export class DishdetailComponent implements OnInit {
   onSubmit() {
     this.comment = this.commentForm.value;
     console.log(this.comment);
+    var d = new Date();
+    var n = d.toISOString();
+    this.comment.date = n;
+    this.dish.comments.push(this.comment);
     this.commentForm.reset({
       author: '',
       rating: 5,
