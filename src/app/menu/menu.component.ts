@@ -9,7 +9,7 @@ import { DishService } from '../services/dish.service';
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
-//encapsulation: ViewEncapsulation.None
+  //encapsulation: ViewEncapsulation.None
 })
 export class MenuComponent implements OnInit {
 
@@ -24,9 +24,9 @@ export class MenuComponent implements OnInit {
       .subscribe(dishes => this.dishes = dishes);
   }
 
-  onSelect(dish: Dish){
+  onSelect(dish: Dish) {
     this.selectedDish = dish;
   }
-    
+
 
 }

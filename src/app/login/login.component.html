@@ -1,7 +1,7 @@
 <md-toolbar md-dialog-title color="primary">
-    Login
-    <span class="flex-spacer"></span>
-    <button md-button md-dialog-close>&times;</button>
+  Login
+  <span class="flex-spacer"></span>
+  <button md-button md-dialog-close>&times;</button>
 </md-toolbar>
 
 <p>{{ user | json }}</p>
@@ -20,10 +20,10 @@
       <md-input-container dividerColor="{{ password.invalid && !password.pristine ? 'warn': 'primary' }}">
         <input mdInput placeholder="Password" type="password" [(ngModel)]="user.password" name="password" #password="ngModel" required>
         <md-hint>
-            <span [hidden]="password.pristine">
+          <span [hidden]="password.pristine">
               <span [hidden]="!password.errors?.required">password is required</span>
-            </span>
-          </md-hint>
+          </span>
+        </md-hint>
       </md-input-container>
       <md-checkbox [(ngModel)]="user.remember" name="remember">Remember Me</md-checkbox>
     </p>
