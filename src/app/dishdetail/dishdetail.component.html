@@ -32,12 +32,39 @@
         <p md-line>
           <span> {{comment.rating}} Stars</span>
         </p>
-
         <p md-line>
           <span>-- {{comment.author}} {{comment.date | date:'mediumDate'}} </span>
         </p>
       </md-list-item>
     </md-list>
-  </div>
+    <form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+        <p>{{ commentForm.value | json }}</p>
+        <p>
+          <md-input-container class="half-width" dividerColor="{{(formErrors.author) ? 'warn' : 'primary'}}">
+            <input mdInput formControlName="author" placeholder="Name" type="text" required>
+              <md-hint>
+                <span [hidden]="!(formErrors.author)">
+                {{formErrors.author}}</span>
+              </md-hint>
+          </md-input-container>
+        </p>
+
+        <p>
+            <md-slider min="0" max="5" step="1" value="5" thumbLabel tickInterval="1" formControlName="rating"></md-slider>
+        </p>
+
+        <p>
+          <md-input-container class="half-width" dividerColor="{{(formErrors.comment) ? 'warn' : 'primary'}}">
+            <textarea mdInput formControlName="comment" placeholder="Your Comment" rows=12></textarea>
+            <md-hint>
+              <span [hidden]="!(formErrors.comment)">
+                  {{formErrors.comment}}</span>
+            </md-hint>
+            </md-input-container>
+        </p>
+        <button type="submit" md-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">Submit</button>
+      </form>
+</div>
+
 
 </div>
