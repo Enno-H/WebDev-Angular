@@ -26,6 +26,9 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LeaderService } from './services/leader.service';
 import { LoginComponent } from './login/login.component';
 
+import { baseURL } from './shared/baseurl';
+import { ProcessHttpmsgService } from './services/process-httpmsg.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +54,9 @@ import { LoginComponent } from './login/login.component';
   providers: [ 
     DishService,
     PromotionService,
-    LeaderService ],
+    LeaderService,
+    {provide: 'BaseURL', useValue: baseURL},
+    ProcessHttpmsgService ],
   entryComponents:[
     LoginComponent
   ],
