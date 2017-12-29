@@ -65,7 +65,12 @@
         </p>
         <button type="submit" md-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">Submit</button>
       </form>
-</div>
-
-
+  </div>
+  <div [hidden]="dish || errMess">
+      <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
+    </div>
+    <div *ngIf="errMess">
+        <h2>Error</h2>
+        <h4>{{errMess}}</h4>
+    </div>
 </div>
