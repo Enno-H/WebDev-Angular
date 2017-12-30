@@ -30,3 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Build json-server
 
 Run "json-server --watch db.json -d 2000" in the folder "json-server" to get images.
+
+## Building and Deploying
+
+Run "ng build --target=production" and copy all files in folder 'dist' into the public folder on the server.
